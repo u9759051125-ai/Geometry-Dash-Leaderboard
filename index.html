@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Dash - Custom Demon List</title>
+    <style>
+        :root {
+            --bg-color: #121316;
+            --card-bg: #1c1e24;
+            --accent-color: #00d2ff;
+            --accent-ill: #ff3366;
+            --text-color: #ffffff;
+            --text-muted: #a0a5b5;
+            --border-color: #2a2d37;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Navigazione Tab */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        nav button {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        nav button:hover, nav button.active {
+            background-color: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
+        }
+
+        /* Contenitori Liste */
+        .list-container {
+            display: none;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .list-container.active {
+            display: block;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .ill-title {
+            border-left-color: var(--accent-ill);
+        }
+
+        /* Card per Livelli */
+        .demon-card {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .demon-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        .rank {
+            font-size: 1.8rem;
+            font-weight: bold;
+            width: 70px;
+            text-align: center;
+            color: var(--accent-color);
+        }
+
+        .ill-rank {
+            color: var(--accent-ill);
+        }
+
+        .demon-img {
+            width: 160px;
+            height: 90px;
+            object-fit: cover;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .demon-info {
+            padding: 15px 20px;
+            flex-grow: 1;
+        }
+
+        .demon-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .demon-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Card per Giocatori */
+        .player-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .player-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .player-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .player-points {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Demon List Showcase</h1>
+    </header>
+
+    <!-- Pulsanti per Cambiare Scheda -->
+    <nav>
+        <button onclick="showTab('demon-list')" class="active">Demon List</button>
+        <button onclick="showTab('ill-list')">ILL (Impossible List)</button>
+        <button onclick="showTab('player-list')">Player List</button>
+    </nav>
+
+    <!-- 1. DEMON LIST MAIN -->
+    <div id="demon-list" class="list-container active">
+        <h2 class="section-title">Official Demon List</h2>
+
+        <!-- Posizione #1 -->
+        <div class="demon-card">
+            <div class="rank">#1</div>
+            <img src="https://img.youtube.com/vi/31945V43tD8/hqdefault.jpg" alt="Acheron" class="demon-img">
+            <div class="demon-info">
+                <h3>Acheron</h3>
+                <p>Creato da: <strong>ranyan & altri</strong> | Verificato da: <strong>Zo</strong></p>
+            </div>
+        </div>
+
+        <!-- Posizione #2 -->
+        <div class="demon-card">
+            <div class="rank">#2</div>
+            <img src="https://img.youtube.com/vi/d1s_hZ3pPqQ/hqdefault.jpg" alt="Avernus" class="demon-img">
+            <div class="demon-info">
+                <h3>Avernus</h3>
+                <p>Creato da: <strong>Paimon & altri</strong> | Verificato da: <strong>Diamond</strong></p>
+            </div>
+        </div>
+
+        <!-- Posizione #3 -->
+        <div class="demon-card">
+            <div class="rank">#3</div>
+            <img src="https://img.youtube.com/vi/vS0QnE9K_R4/hqdefault.jpg" alt="Silent Clubstep" class="demon-img">
+            <div class="demon-info">
+                <h3>Silent Clubstep</h3>
+                <p>Creato da: <strong>Nailok</strong> | Verificato da: <strong>paqzz</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. IMPOSSIBLE DEMONS LIST (ILL) -->
+    <div id="ill-list" class="list-container">
+        <h2 class="section-title ill-title">Impossible List (ILL)</h2>
+
+        <!-- Posizione #1 ILL -->
+        <div class="demon-card">
+            <div class="rank ill-rank">#1</div>
+            <img src="https://img.youtube.com/vi/9g9wW1_gM0E/hqdefault.jpg" alt="Ton 618" class="demon-img">
+            <div class="demon-info">
+                <h3>Ton 618</h3>
+                <p>Creato da: <strong>Thegda</strong> | Stato: <strong>Impossibile (Bot-only)</strong></p>
+            </div>
+        </div>
+
+        <!-- Posizione #2 ILL -->
+        <div class="demon-card">
+            <div class="rank ill-rank">#2</div>
+            <img src="https://img.youtube.com/vi/36RjG_Y5VUE/hqdefault.jpg" alt="Cyclolcyc" class="demon-img">
+            <div class="demon-info">
+                <h3>Cyclolcyc</h3>
+                <p>Creato da: <strong>Sary & altri</strong> | Stato: <strong>Physically Impossible</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. PLAYER LIST / LEADERBOARD -->
+    <div id="player-list" class="list-container">
+        <h2 class="section-title">Top Players</h2>
+
+        <!-- Giocatore #1 -->
+        <div class="player-card">
+            <div class="player-left">
+                <div class="rank" style="width: auto; margin-right: 15px;">#1</div>
+                <img src="https://yt3.ggpht.com/ytc/AIdro_nF6k4K-Z1-8sS0fR2s4v3J6W5X=s88-c-k-c0x00ffffff-no-rj" alt="Zo" class="player-avatar">
+                <div>
+                    <h3>Zo</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Nazionalità: 🇺🇸 USA</p>
+                </div>
+            </div>
+            <div class="player-points">3,450 Punti</div>
+        </div>
+
+        <!-- Giocatore #2 -->
+        <div class="player-card">
+            <div class="player-left">
+                <div class="rank" style="width: auto; margin-right: 15px;">#2</div>
+                <img src="https://yt3.ggpht.com/ytc/AIdro_m9D7x4K-Z1-8sS0fR2s4v3J6W5X=s88-c-k-c0x00ffffff-no-rj" alt="Doggie" class="player-avatar">
+                <div>
+                    <h3>Doggie</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Nazionalità: 🇺🇸 USA</p>
+                </div>
+            </div>
+            <div class="player-points">3,120 Punti</div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            const containers = document.querySelectorAll('.list-container');
+            containers.forEach(c => c.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('nav button');
+            buttons.forEach(b => b.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
